@@ -1,4 +1,10 @@
 body {
-  color: blue;
-  background-color: bisque;
+}
+
+.logo {
+  height: 100px;
+}
+
+.red {
+  color: red;
 }
