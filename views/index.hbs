@@ -1,36 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>Ironhome</title>
-</head>
-<body>
-  <nav>
-    <img src="/images/logo.png" alt="logo" class="logo">
-    <a href="/">Home</a>
-    <a href="/best-homes">Best Homes</a>
-  </nav>
-  <h1>Welcome Ironhomers. :)</h1>
+<h1>Welcome Ironhomers. :)</h1>
 
-  The website was visited {{counter}} times
+The website was visited {{counter}} times
 
-  <h2>Homes</h2>
-  <ul>
-  {{#each homes}}
-    <li class="red">
-      {{@index}}:
-      {{this.address}}, 
-      {{this.city}}
-      {{#if this.isWeWork}}
-        (WeWork)
-      {{else}}
-        (member home)
-      {{/if}}
-    </li>
-  {{/each}}
-  </ul>
-</body>
-</html>
+<h2>Homes</h2>
+{{#each homes}}
+  {{> card this}}
+{{/each}}
+
