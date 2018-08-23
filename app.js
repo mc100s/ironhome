@@ -37,6 +37,26 @@ app.get('/login', (req,res,next) => {
   res.render('login');
 })
 
+app.get('/cities/:city', (req,res,next) => {
+  let city = req.params.city
+  let picture
+  switch (city) {
+    case "Berlin":
+      picture = "https://www.visitberlin.de/system/files/styles/visitberlin_bleed_header_visitberlin_mobile_1x/private/image/iStock_000074120341_Double_DL_PPT_0.jpg?h=a66ba266&itok=2YXS5_33"
+      break;
+    case "Paris":
+      picture = "https://s.abcnews.com/images/International/paris-summer-weather-gty-jef-180727_hpMain_2_16x9_992.jpg"
+      break;
+    default:
+      picture = "http://citydiscovery2.imgix.net/new_york.jpg?w=2100&h=1100&bri=-12&q=30&auto=format&crop=entropy&fit=crop"
+      break;
+  }
+  res.render('city-detail', {
+    city: city,
+    picture: picture
+  });
+})
+
 
 app.listen(3000, () => {
   console.log('My first app listening on port 3000!')
