@@ -16,6 +16,15 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.use(express.static('public'));
 
 
+let apartments = [
+  { address: "qstrasse", city: "Berlin", price: 300 },
+  { address: "ystrasse", city: "Berlin", price: 800 },
+  { address: "estrasse", city: "Berlin", price: 600 },
+  { address: "rue a", city: "Paris", price: 700 },
+  { address: "rue s", city: "Paris", price: 1100 }
+]
+
+
 app.get('/', (req, res, next) => {
   counter++;
   let homes = [
@@ -56,6 +65,25 @@ app.get('/cities/:city', (req,res,next) => {
     picture: picture
   });
 })
+
+app.get('/search', (req,res,next) => {
+  console.log('DEBUG req.query', req.query);
+
+  let city = req.query.city
+  let maxPrice = Number(req.query.maxPrice)
+  res.render('search', {
+    apartments: apartments.filter(a => a.price <= maxPrice && a.city === city)
+  });
+})
+
+
+// localhost:3000/a/pancake/crepe/d
+app.get('/a/:b/:c/d', (req,res,next) => {
+  console.log("The route is executed");
+  
+  console.log(req.params);
+})
+
 
 
 app.listen(3000, () => {

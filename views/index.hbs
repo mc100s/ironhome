@@ -7,3 +7,16 @@ The website was visited {{counter}} times
   {{> card this}}
 {{/each}}
 
+
+
+<hr class="clearfix">
+
+<p>Search for an apartment</p>
+
+<form action="/search" method="get">
+  <input type="text" name="city" placeholder="city">
+  <input type="number" name="maxPrice" placeholder="maximum price">
+  <button>Search</button>
+</form>
+
+<hr>
