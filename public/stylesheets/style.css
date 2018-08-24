@@ -1,26 +1,8 @@
 body {
-}
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
-.logo {
-  height: 100px;
-}
+a {
+  color: #00B7FF; }
 
-.red {
-  color: red;
-}
-
-.card {
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 200px;
-  float: left;
-  margin: 10px;
-}
-
-.card img {
-  width: 100%;
-}
-
-.clearfix {
-  clear: both;
-}
+/*# sourceMappingURL=style.css.map */
