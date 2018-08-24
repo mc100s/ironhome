@@ -1,0 +1,12 @@
+<h1>Our homes</h1>
+
+<ul>
+
+{{#each  homes}}
+  <li>
+    <img src="{{this.picture}}" height="20">
+    {{this.address.city}} - 
+    {{this._owner.firstname}} {{this._owner.lastname}} 
+  </li>
+{{/each}}
+</ul>
